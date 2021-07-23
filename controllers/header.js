@@ -1,12 +1,23 @@
-const { defaultMethod } = require("./../utils/headerMethods");
+const {
+  validateHeader,
+  determineIpAddress,
+  determineLanguage,
+  determineSoftware,
+} = require("./../utils/headerMethods");
 
-// display date details
+// display request header details
 exports.details = (req, res) => {
   try {
+    validateHeader(req);
+
+    const ipAddress = determineIpAddress(req);
+    const language = determineLanguage(req);
+    const software = determineSoftware(req);
+
     const response = {
-      ipaddress: "",
-      language: "",
-      software: "",
+      ipaddress: ipAddress,
+      language: language,
+      software: software,
     };
     res.json(response);
   } catch (error) {
