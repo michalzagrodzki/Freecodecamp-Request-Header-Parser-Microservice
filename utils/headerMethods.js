@@ -1,5 +1,5 @@
-validateHeader = () => {
-  return;
+validateHeader = (req) => {
+  if (!req.headers) throw "Missing request header";
 };
 
 determineIpAddress = () => {
