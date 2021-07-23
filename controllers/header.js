@@ -13,7 +13,6 @@ exports.details = (req, res) => {
     const ipAddress = determineIpAddress(req);
     const language = determineLanguage(req);
     const software = determineSoftware(req);
-
     const response = {
       ipaddress: ipAddress,
       language: language,
