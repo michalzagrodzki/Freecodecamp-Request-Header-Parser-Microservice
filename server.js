@@ -15,6 +15,8 @@ const header_controller = require("./controllers/header");
 const cors = require("cors");
 app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 204
 
+// setting for IP fetching from request headers
+app.set("trust proxy", true);
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
 
