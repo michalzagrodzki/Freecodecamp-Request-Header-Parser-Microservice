@@ -2,8 +2,9 @@ validateHeader = (req) => {
   if (!req.headers) throw "Missing request header";
 };
 
-determineIpAddress = () => {
-  return;
+determineIpAddress = (request) => {
+  if (request.ip) return request.ip;
+  throw "IP in request not present";
 };
 determineLanguage = () => {
   return;
